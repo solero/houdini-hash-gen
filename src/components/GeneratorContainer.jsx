@@ -35,7 +35,7 @@ function GeneratorContainer() {
               </Tabs>
             </Card.Body>
             <Card.Footer className="text-muted">
-              Made with ❤️ by Ben &bull; <a href='https://github.com/ketnipz' target='_blank' rel='noreferrer'>View on GitHub</a>
+              Made with ❤️ by Ben &bull; <a href='https://github.com/ketnipz/houdini-hash-gen' target='_blank' rel='noreferrer'>View on GitHub</a>
             </Card.Footer>
           </Card>
         </Col>

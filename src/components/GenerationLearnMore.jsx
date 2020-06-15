@@ -13,7 +13,7 @@ function encryptPassword(password, digest=true) {
   }
 
   let swappedHash = password.slice(16, 32)
-  let swappedHash += password.slice(0, 16);
+  swappedHash += password.slice(0, 16);
   return swappedHash;
 }
 
@@ -28,8 +28,10 @@ function getLoginHash(password, rndk) {
 }
 
 const passwordToHash = 'abc';
-const loginHash = getLoginHash(
-  passwordToHash, 
+
+let loginHash = md5(passwordToHash).toUpperCase();
+loginHash = getLoginHash(
+  loginHash, 
   'houdini'
 );
 

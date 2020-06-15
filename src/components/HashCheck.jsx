@@ -7,6 +7,7 @@ import Collapse from 'react-bootstrap/Collapse';
 import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import md5 from 'md5';
 
 class HashCheck extends React.Component {
   constructor(props) {
@@ -54,8 +55,9 @@ class HashCheck extends React.Component {
   }
 
   checkMatch() {
-    const loginHash = Crypto.getLoginHash(
-      this.state.password, 
+    let loginHash = md5(this.state.password).toUpperCase();
+    loginHash = Crypto.getLoginHash(
+      loginHash, 
       this.state.randomKey, 
       this.state.staticKey
     );

@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Crypto from '../Crypto.js';
 import bcrypt from 'bcryptjs';
+import md5 from 'md5';
 
 class HashGenerator extends React.Component {
   constructor(props) {
@@ -67,8 +68,10 @@ class HashGenerator extends React.Component {
       clearTimeout(this.updateTimeout);
       
       this.updateTimeout = setTimeout(() => {
-        const loginHash = Crypto.getLoginHash(
-          this.state.password, 
+        let loginHash = md5(this.state.password).toUpperCase();
+        
+        loginHash = Crypto.getLoginHash(
+          loginHash,
           this.state.randomKey, 
           this.state.staticKey
         );

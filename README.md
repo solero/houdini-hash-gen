@@ -20,7 +20,7 @@ Alternatively, you can build the static files which can then be uploaded to a we
 $ npm run build:prod
 ```
 
-You may also visit the [live version](https://solero.me/passwords) of the site.
+You may also visit the [live version](https://toolbox.solero.me/houdini-hash-gen/#) of the site.
 
 ## Screenshot
 
